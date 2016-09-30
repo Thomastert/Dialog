@@ -14,6 +14,9 @@ public class AnswerDisplay : MonoBehaviour {
     public bool question2;
     CharacterSwitcher charswitch;
     LineReader linereader;
+    [SerializeField]
+    private GameObject Next;
+    private int number;
 
     void Start ()
     {
@@ -25,35 +28,48 @@ public class AnswerDisplay : MonoBehaviour {
 	void Update ()
     {
         UpdateAnswers();
+        CheckForQuestion();
+    }
 
-        if (linereader.lineNumberNpc1 == 1 || linereader.lineNumberNpc2 == 1)
+    void CheckForQuestion()
+    {
+        if(charswitch.Switcher.value == 0)
         {
-            question1 = true;
-            QuestionDisplay.SetActive(true);
-        }
-        else if (linereader.lineNumberNpc1 == 6 || linereader.lineNumberNpc2 == 6)
-        {
-            question2 = true;
-            QuestionDisplay.SetActive(true);
-        }
-        else if (linereader.lineNumberNpc1 == 16 || linereader.lineNumberNpc2 == 16)
-        {
-            question2 = true;
-            QuestionDisplay.SetActive(true);
-        }
-        else if (linereader.lineNumberNpc1 == 24 || linereader.lineNumberNpc2 == 24)
-        {
-            question2 = true;
-            QuestionDisplay.SetActive(true);
+            number = linereader.lineNumberNpc1;
         }
         else
         {
-            question1 = false;
-            question2 = false;
-            QuestionDisplay.SetActive(false);
+            number = linereader.lineNumberNpc2;
+        }
+        switch (number)
+        {
+            case 1:
+                question1 = true;
+                QuestionDisplay.SetActive(true);
+                Next.SetActive(false);
+            break;
+
+            case 6:
+                question2 = true;
+                QuestionDisplay.SetActive(true);
+                Next.SetActive(false);
+            break;
+
+            case 24:
+                question2 = true;
+                QuestionDisplay.SetActive(true);
+                Next.SetActive(false);
+            break;
+
+            default:
+                question1 = false;
+                question2 = false;
+                QuestionDisplay.SetActive(false);
+                Next.SetActive(true);
+            break;
         }
 
-	}
+    }
 
     void UpdateAnswers()
     {

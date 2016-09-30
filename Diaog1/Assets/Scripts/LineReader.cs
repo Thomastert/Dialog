@@ -42,6 +42,11 @@ public class LineReader : MonoBehaviour {
 
     void Update ()
     {
+        SwitchCharacter();
+	}
+
+    void SwitchCharacter()
+    {
         if (charswitch.Switcher.value == 0)
         {
             var myDataNpc1 = fileLinesNpc1[lineNumberNpc1];
@@ -52,7 +57,7 @@ public class LineReader : MonoBehaviour {
             var myDataNpc2 = fileLinesNpc2[lineNumberNpc2];
             DialogDisplay.text = myDataNpc2;
         }
-	}
+    }
 
     public void Onchange()
     {

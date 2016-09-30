@@ -4,29 +4,11 @@ using System.Collections;
 public class AnswerChecker : MonoBehaviour {
     AnswerDisplay answerdisplay;
     LineReader linereader;
-    [SerializeField]private GameObject Next;
-
     void Start ()
     {
         answerdisplay = GetComponent<AnswerDisplay>();
         linereader = GetComponent<LineReader>();
     }
-
-	void Update ()
-    {
-        if (answerdisplay.question1 == true)
-        {
-            Next.SetActive(false);
-        }
-        else if (answerdisplay.question2 == true)
-        {
-            Next.SetActive(false);
-        }
-        else
-        {
-            Next.SetActive(true);
-        }
-	}
 
     public void Answer1()
     {

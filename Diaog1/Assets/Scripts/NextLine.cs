@@ -5,15 +5,13 @@ public class NextLine : MonoBehaviour {
     LineReader linereader;
     CharacterSwitcher charswitch;
 
-
-	// Use this for initialization
 	void Start ()
     {
         charswitch = GetComponent<CharacterSwitcher>();
         linereader = GetComponent<LineReader>();
 	}
-
-    public void NextButton()
+       
+       public void NextButton()
     {
         if (charswitch.Switcher.value == 0)
         {
