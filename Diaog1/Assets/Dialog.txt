@@ -1,0 +1,32 @@
+noot noot
+hello what can i do for u?
+
+No u can't have my nootella.
+Well maybe just a little bit.
+Why do u want my nootella?
+end
+
+
+
+-
+
+A fish?
+Why would i have a fish?
+And even if i had a fish why would u want it?
+end
+
+
+
+-
+
+Can i?
+Hmm i never really Listen to myself.
+I know i can noot though.
+Would u like me to noot u?
+end
+
+
+-
+
+lines 1-10 npc
+lines 11-20 you
